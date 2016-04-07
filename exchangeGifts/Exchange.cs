@@ -146,12 +146,12 @@ namespace exchangeGifts
             // Variables.
             List<string> names1 = new List<string>(), names2 = new List<string>();
             Dictionary<string, string> lastYear = new Dictionary<string, string>();
-            System.IO.StreamWriter outFile = new System.IO.StreamWriter(@"thisYear.txt");
+            System.IO.StreamWriter outFile = new System.IO.StreamWriter(@"BowlesThisYear.txt");
             int participants, done = 0;
             string name, one, two, last;
 
             // Get the number of particpants for the year.
-            lastYear = readFromFile("lastYear.txt"); // Get the assignments from the previous year.
+            lastYear = readFromFile("BowlesLastYear.txt"); // Get the assignments from the previous year.
             Console.Write("How many are participating this year? ");
             participants = int.Parse(Console.ReadLine());
 
