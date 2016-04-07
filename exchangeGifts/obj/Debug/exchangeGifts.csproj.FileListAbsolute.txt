@@ -10,3 +10,6 @@ D:\Random Projects\exchangeGifts\exchangeGifts\obj\Debug\exchangeGifts.pdb
 D:\Random Projects\exchangeGifts\exchangeGifts\bin\Debug\exchangeGifts.exe
 D:\Random Projects\exchangeGifts\exchangeGifts\bin\Debug\exchangeGifts.pdb
 D:\Random Projects\exchangeGifts\exchangeGifts\obj\Debug\exchangeGifts.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGifts\bin\Debug\exchangeGifts.exe.config
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGifts\obj\Debug\exchangeGifts.exe
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGifts\obj\Debug\exchangeGifts.pdb
