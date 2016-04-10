@@ -97,6 +97,7 @@
             this.EnterButton.Text = "Enter";
             this.EnterButton.UseVisualStyleBackColor = true;
             this.EnterButton.Visible = false;
+            this.EnterButton.Click += new System.EventHandler(this.EnterButton_Click);
             // 
             // ExchangeLabel
             // 
@@ -107,6 +108,7 @@
             this.ExchangeLabel.Text = "Exchange Gifts";
             this.ExchangeLabel.UseVisualStyleBackColor = true;
             this.ExchangeLabel.Visible = false;
+            this.ExchangeLabel.Click += new System.EventHandler(this.ExchangeLabel_Click);
             // 
             // FamilyExchangeTextBox
             // 
@@ -143,6 +145,7 @@
             this.FamilyEnterButton.Text = "Enter";
             this.FamilyEnterButton.UseVisualStyleBackColor = true;
             this.FamilyEnterButton.Visible = false;
+            this.FamilyEnterButton.Click += new System.EventHandler(this.FamilyEnterButton_Click);
             // 
             // FamilyExchangeButton
             // 
@@ -153,6 +156,7 @@
             this.FamilyExchangeButton.Text = "Exchange Gifts";
             this.FamilyExchangeButton.UseVisualStyleBackColor = true;
             this.FamilyExchangeButton.Visible = false;
+            this.FamilyExchangeButton.Click += new System.EventHandler(this.FamilyExchangeButton_Click);
             // 
             // ExchangeForm
             // 

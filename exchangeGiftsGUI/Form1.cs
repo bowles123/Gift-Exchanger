@@ -28,6 +28,7 @@ namespace exchangeGiftsGUI
             EntryTextBox.Visible = true;
             EnterButton.Visible = true;
 
+            ExchangeLabel.Visible = false;
             FamilyEnterLabel.Visible = false;
             FamilyEntryTextBox.Visible = false;
             FamilyEnterButton.Visible = false;
@@ -44,6 +45,31 @@ namespace exchangeGiftsGUI
             FamilyEnterLabel.Visible = true;
             FamilyEntryTextBox.Visible = true;
             FamilyEnterButton.Visible = true;
+
+            FamilyExchangeTextBox.Visible = false;
+            FamilyExchangeButton.Visible = false;
+            Exchanges.Visible = false;
+            ExchangeLabel.Visible = false;
+        }
+
+        private void EnterButton_Click(object sender, EventArgs e)
+        {
+            ExchangeLabel.Visible = true;
+        }
+
+        private void FamilyEnterButton_Click(object sender, EventArgs e)
+        {
+            FamilyExchangeButton.Visible = true;
+        }
+
+        private void ExchangeLabel_Click(object sender, EventArgs e)
+        {
+            Exchanges.Visible = true;
+        }
+
+        private void FamilyExchangeButton_Click(object sender, EventArgs e)
+        {
+            FamilyExchangeTextBox.Visible = true;
         }
     }
 }
