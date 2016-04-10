@@ -1,0 +1,9 @@
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\bin\Debug\exchangeGiftsGUI.exe.config
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\bin\Debug\exchangeGiftsGUI.exe
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\bin\Debug\exchangeGiftsGUI.pdb
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.ExchangeForm.resources
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.Properties.Resources.resources
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.csproj.GenerateResource.Cache
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.exe
+C:\Users\Brian\Desktop\exchangeGifts\exchangeGiftsGUI\obj\Debug\exchangeGiftsGUI.pdb
