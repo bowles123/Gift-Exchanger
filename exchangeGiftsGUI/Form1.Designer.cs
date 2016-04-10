@@ -30,16 +30,16 @@
         {
             this.BowlesButton = new System.Windows.Forms.Button();
             this.ThompsonButton = new System.Windows.Forms.Button();
-            this.Exchanges = new System.Windows.Forms.TextBox();
             this.EntryLabel = new System.Windows.Forms.Label();
             this.EntryTextBox = new System.Windows.Forms.TextBox();
             this.EnterButton = new System.Windows.Forms.Button();
             this.ExchangeLabel = new System.Windows.Forms.Button();
-            this.FamilyExchangeTextBox = new System.Windows.Forms.TextBox();
             this.FamilyEnterLabel = new System.Windows.Forms.Label();
             this.FamilyEntryTextBox = new System.Windows.Forms.TextBox();
             this.FamilyEnterButton = new System.Windows.Forms.Button();
             this.FamilyExchangeButton = new System.Windows.Forms.Button();
+            this.Exchanges = new System.Windows.Forms.RichTextBox();
+            this.FamilyExchangeTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // BowlesButton
@@ -62,14 +62,6 @@
             this.ThompsonButton.UseVisualStyleBackColor = true;
             this.ThompsonButton.Click += new System.EventHandler(this.ThompsonButton_Click);
             // 
-            // Exchanges
-            // 
-            this.Exchanges.Location = new System.Drawing.Point(234, 64);
-            this.Exchanges.Name = "Exchanges";
-            this.Exchanges.Size = new System.Drawing.Size(150, 20);
-            this.Exchanges.TabIndex = 2;
-            this.Exchanges.Visible = false;
-            // 
             // EntryLabel
             // 
             this.EntryLabel.AutoSize = true;
@@ -87,6 +79,7 @@
             this.EntryTextBox.Size = new System.Drawing.Size(100, 20);
             this.EntryTextBox.TabIndex = 4;
             this.EntryTextBox.Visible = false;
+            this.EntryTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EntryTextBox_KeyDown);
             // 
             // EnterButton
             // 
@@ -109,14 +102,6 @@
             this.ExchangeLabel.UseVisualStyleBackColor = true;
             this.ExchangeLabel.Visible = false;
             this.ExchangeLabel.Click += new System.EventHandler(this.ExchangeLabel_Click);
-            // 
-            // FamilyExchangeTextBox
-            // 
-            this.FamilyExchangeTextBox.Location = new System.Drawing.Point(234, 191);
-            this.FamilyExchangeTextBox.Name = "FamilyExchangeTextBox";
-            this.FamilyExchangeTextBox.Size = new System.Drawing.Size(150, 20);
-            this.FamilyExchangeTextBox.TabIndex = 7;
-            this.FamilyExchangeTextBox.Visible = false;
             // 
             // FamilyEnterLabel
             // 
@@ -158,21 +143,41 @@
             this.FamilyExchangeButton.Visible = false;
             this.FamilyExchangeButton.Click += new System.EventHandler(this.FamilyExchangeButton_Click);
             // 
+            // Exchanges
+            // 
+            this.Exchanges.Location = new System.Drawing.Point(234, 41);
+            this.Exchanges.Name = "Exchanges";
+            this.Exchanges.ReadOnly = true;
+            this.Exchanges.Size = new System.Drawing.Size(150, 140);
+            this.Exchanges.TabIndex = 12;
+            this.Exchanges.Text = "";
+            this.Exchanges.Visible = false;
+            // 
+            // FamilyExchangeTextBox
+            // 
+            this.FamilyExchangeTextBox.Location = new System.Drawing.Point(234, 187);
+            this.FamilyExchangeTextBox.Name = "FamilyExchangeTextBox";
+            this.FamilyExchangeTextBox.ReadOnly = true;
+            this.FamilyExchangeTextBox.Size = new System.Drawing.Size(150, 140);
+            this.FamilyExchangeTextBox.TabIndex = 13;
+            this.FamilyExchangeTextBox.Text = "";
+            this.FamilyExchangeTextBox.Visible = false;
+            // 
             // ExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 327);
+            this.Controls.Add(this.FamilyExchangeTextBox);
+            this.Controls.Add(this.Exchanges);
             this.Controls.Add(this.FamilyExchangeButton);
             this.Controls.Add(this.FamilyEnterButton);
             this.Controls.Add(this.FamilyEntryTextBox);
             this.Controls.Add(this.FamilyEnterLabel);
-            this.Controls.Add(this.FamilyExchangeTextBox);
             this.Controls.Add(this.ExchangeLabel);
             this.Controls.Add(this.EnterButton);
             this.Controls.Add(this.EntryTextBox);
             this.Controls.Add(this.EntryLabel);
-            this.Controls.Add(this.Exchanges);
             this.Controls.Add(this.ThompsonButton);
             this.Controls.Add(this.BowlesButton);
             this.Name = "ExchangeForm";
@@ -187,16 +192,16 @@
 
         private System.Windows.Forms.Button BowlesButton;
         private System.Windows.Forms.Button ThompsonButton;
-        private System.Windows.Forms.TextBox Exchanges;
         private System.Windows.Forms.Label EntryLabel;
         private System.Windows.Forms.TextBox EntryTextBox;
         private System.Windows.Forms.Button EnterButton;
         private System.Windows.Forms.Button ExchangeLabel;
-        private System.Windows.Forms.TextBox FamilyExchangeTextBox;
         private System.Windows.Forms.Label FamilyEnterLabel;
         private System.Windows.Forms.TextBox FamilyEntryTextBox;
         private System.Windows.Forms.Button FamilyEnterButton;
         private System.Windows.Forms.Button FamilyExchangeButton;
+        private System.Windows.Forms.RichTextBox Exchanges;
+        private System.Windows.Forms.RichTextBox FamilyExchangeTextBox;
     }
 }
 

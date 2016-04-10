@@ -1,60 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Exchange
+namespace exchangeGiftsGUI
 {
-    public List<string> Names { get { return names; } }
-    public List<string> ToNames { get { return toNames; } }
-    public List<string> FromNames { get { return fromNames; } }
-    public Dictionary<string, string> LastTime { get { return lastTime; } }
-
-    private List<string> names;
-    private List<string> toNames;
-    private List<string> fromNames;
-    private Dictionary<string, string> lastTime;
-
-	public Exchange()
-	{
-        names = new List<string>();
-        toNames = new List<string>();
-        fromNames = new List<string>();
-        lastTime = new Dictionary<string, string>();
-	}
-
-    public void ShuffleNames()
+    public class Exchange
     {
-        // Variables.
-        Random rand = new Random();
-        int n = lst.Count;
+        public List<string> Names { get { return names; } }
+        public List<string> ToNames { get { return toNames; } }
+        public List<string> FromNames { get { return fromNames; } }
+        public Dictionary<string, string> LastTime { get { return lastTime; } }
 
-        // Shuffle the list.
-        while (n > 1)
+        private List<string> names;
+        private List<string> toNames;
+        private List<string> fromNames;
+        private Dictionary<string, string> lastTime;
+
+        public Exchange()
         {
-            n--;
-            int k = rand.Next(n + 1);
-            string value = Names[k];
-            Names[k] = Names[n];
-            Names[n] = value;
+            names = new List<string>();
+            toNames = new List<string>();
+            fromNames = new List<string>();
+            lastTime = new Dictionary<string, string>();
         }
-    }
 
-    public bool ExchangeGift(string from, string to)
-    {
-        string name;
-        LastTime.TryGetValue(out name);
-
-        if (from != to && to != name)
+        public void ShuffleNames()
         {
-            fromNames.Add(from);
-            toNames.Add(to);
-            return true;
+            // Variables.
+            Random rand = new Random();
+            int n = Names.Count;
+
+            // Shuffle the list.
+            while (n > 1)
+            {
+                n--;
+                int k = rand.Next(n + 1);
+                string value = Names[k];
+                Names[k] = Names[n];
+                Names[n] = value;
+            }
         }
-        else
-            return false;
-    }
 
-    public void InitializeLastTime(string fileName)
-    {
+        public bool ExchangeGift(string from, string to)
+        {
+            string name;
+            LastTime.TryGetValue(from, out name);
 
+            if (from != to && to != name)
+            {
+                fromNames.Add(from);
+                toNames.Add(to);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void InitializeLastTime(string fileName)
+        {
+
+        }
     }
 }
