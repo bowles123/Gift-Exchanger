@@ -104,12 +104,14 @@ namespace exchangeGiftsGUI
         {
             if (e.Item.Checked)
                 exchange.Names.Add(e.Item.Text);
+            else exchange.Names.Remove(e.Item.Text);
         }
 
         private void IndividualParticipatingPeople_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (e.Item.Checked)
                 exchange.Names.Add(e.Item.Text);
+            else exchange.Names.Remove(e.Item.Text);
         }
     }
 }
