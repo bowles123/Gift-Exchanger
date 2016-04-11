@@ -30,16 +30,14 @@
         {
             this.BowlesButton = new System.Windows.Forms.Button();
             this.ThompsonButton = new System.Windows.Forms.Button();
-            this.EntryLabel = new System.Windows.Forms.Label();
-            this.EntryTextBox = new System.Windows.Forms.TextBox();
-            this.EnterButton = new System.Windows.Forms.Button();
-            this.ExchangeLabel = new System.Windows.Forms.Button();
-            this.FamilyEnterLabel = new System.Windows.Forms.Label();
-            this.FamilyEntryTextBox = new System.Windows.Forms.TextBox();
-            this.FamilyEnterButton = new System.Windows.Forms.Button();
             this.FamilyExchangeButton = new System.Windows.Forms.Button();
-            this.Exchanges = new System.Windows.Forms.RichTextBox();
-            this.FamilyExchangeTextBox = new System.Windows.Forms.RichTextBox();
+            this.IndividualExchanges = new System.Windows.Forms.RichTextBox();
+            this.FamilyParticipatingPeople = new System.Windows.Forms.ListView();
+            this.IndividualParticipatingPeople = new System.Windows.Forms.ListView();
+            this.IndividualExchangeButton = new System.Windows.Forms.Button();
+            this.FamilyExchanges = new System.Windows.Forms.RichTextBox();
+            this.FamilyLabel = new System.Windows.Forms.Label();
+            this.IndividualLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BowlesButton
@@ -62,122 +60,102 @@
             this.ThompsonButton.UseVisualStyleBackColor = true;
             this.ThompsonButton.Click += new System.EventHandler(this.ThompsonButton_Click);
             // 
-            // EntryLabel
-            // 
-            this.EntryLabel.AutoSize = true;
-            this.EntryLabel.Location = new System.Drawing.Point(10, 67);
-            this.EntryLabel.Name = "EntryLabel";
-            this.EntryLabel.Size = new System.Drawing.Size(121, 13);
-            this.EntryLabel.TabIndex = 3;
-            this.EntryLabel.Text = "Enter Individual\'s Name:";
-            this.EntryLabel.Visible = false;
-            // 
-            // EntryTextBox
-            // 
-            this.EntryTextBox.Location = new System.Drawing.Point(13, 92);
-            this.EntryTextBox.Name = "EntryTextBox";
-            this.EntryTextBox.Size = new System.Drawing.Size(100, 20);
-            this.EntryTextBox.TabIndex = 4;
-            this.EntryTextBox.Visible = false;
-            this.EntryTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EntryTextBox_KeyDown);
-            // 
-            // EnterButton
-            // 
-            this.EnterButton.Location = new System.Drawing.Point(119, 92);
-            this.EnterButton.Name = "EnterButton";
-            this.EnterButton.Size = new System.Drawing.Size(75, 23);
-            this.EnterButton.TabIndex = 5;
-            this.EnterButton.Text = "Enter";
-            this.EnterButton.UseVisualStyleBackColor = true;
-            this.EnterButton.Visible = false;
-            this.EnterButton.Click += new System.EventHandler(this.EnterButton_Click);
-            // 
-            // ExchangeLabel
-            // 
-            this.ExchangeLabel.Location = new System.Drawing.Point(13, 129);
-            this.ExchangeLabel.Name = "ExchangeLabel";
-            this.ExchangeLabel.Size = new System.Drawing.Size(100, 23);
-            this.ExchangeLabel.TabIndex = 6;
-            this.ExchangeLabel.Text = "Exchange Gifts";
-            this.ExchangeLabel.UseVisualStyleBackColor = true;
-            this.ExchangeLabel.Visible = false;
-            this.ExchangeLabel.Click += new System.EventHandler(this.ExchangeLabel_Click);
-            // 
-            // FamilyEnterLabel
-            // 
-            this.FamilyEnterLabel.AutoSize = true;
-            this.FamilyEnterLabel.Location = new System.Drawing.Point(10, 194);
-            this.FamilyEnterLabel.Name = "FamilyEnterLabel";
-            this.FamilyEnterLabel.Size = new System.Drawing.Size(105, 13);
-            this.FamilyEnterLabel.TabIndex = 8;
-            this.FamilyEnterLabel.Text = "Enter Family\'s Name:";
-            this.FamilyEnterLabel.Visible = false;
-            // 
-            // FamilyEntryTextBox
-            // 
-            this.FamilyEntryTextBox.Location = new System.Drawing.Point(12, 221);
-            this.FamilyEntryTextBox.Name = "FamilyEntryTextBox";
-            this.FamilyEntryTextBox.Size = new System.Drawing.Size(100, 20);
-            this.FamilyEntryTextBox.TabIndex = 9;
-            this.FamilyEntryTextBox.Visible = false;
-            // 
-            // FamilyEnterButton
-            // 
-            this.FamilyEnterButton.Location = new System.Drawing.Point(119, 219);
-            this.FamilyEnterButton.Name = "FamilyEnterButton";
-            this.FamilyEnterButton.Size = new System.Drawing.Size(75, 23);
-            this.FamilyEnterButton.TabIndex = 10;
-            this.FamilyEnterButton.Text = "Enter";
-            this.FamilyEnterButton.UseVisualStyleBackColor = true;
-            this.FamilyEnterButton.Visible = false;
-            this.FamilyEnterButton.Click += new System.EventHandler(this.FamilyEnterButton_Click);
-            // 
             // FamilyExchangeButton
             // 
-            this.FamilyExchangeButton.Location = new System.Drawing.Point(12, 257);
+            this.FamilyExchangeButton.Location = new System.Drawing.Point(12, 316);
             this.FamilyExchangeButton.Name = "FamilyExchangeButton";
             this.FamilyExchangeButton.Size = new System.Drawing.Size(100, 23);
-            this.FamilyExchangeButton.TabIndex = 11;
+            this.FamilyExchangeButton.TabIndex = 6;
             this.FamilyExchangeButton.Text = "Exchange Gifts";
             this.FamilyExchangeButton.UseVisualStyleBackColor = true;
             this.FamilyExchangeButton.Visible = false;
             this.FamilyExchangeButton.Click += new System.EventHandler(this.FamilyExchangeButton_Click);
             // 
-            // Exchanges
+            // IndividualExchanges
             // 
-            this.Exchanges.Location = new System.Drawing.Point(234, 41);
-            this.Exchanges.Name = "Exchanges";
-            this.Exchanges.ReadOnly = true;
-            this.Exchanges.Size = new System.Drawing.Size(150, 140);
-            this.Exchanges.TabIndex = 12;
-            this.Exchanges.Text = "";
-            this.Exchanges.Visible = false;
+            this.IndividualExchanges.Location = new System.Drawing.Point(202, 51);
+            this.IndividualExchanges.Name = "IndividualExchanges";
+            this.IndividualExchanges.ReadOnly = true;
+            this.IndividualExchanges.Size = new System.Drawing.Size(150, 100);
+            this.IndividualExchanges.TabIndex = 12;
+            this.IndividualExchanges.Text = "";
+            this.IndividualExchanges.Visible = false;
             // 
-            // FamilyExchangeTextBox
+            // FamilyParticipatingPeople
             // 
-            this.FamilyExchangeTextBox.Location = new System.Drawing.Point(234, 187);
-            this.FamilyExchangeTextBox.Name = "FamilyExchangeTextBox";
-            this.FamilyExchangeTextBox.ReadOnly = true;
-            this.FamilyExchangeTextBox.Size = new System.Drawing.Size(150, 140);
-            this.FamilyExchangeTextBox.TabIndex = 13;
-            this.FamilyExchangeTextBox.Text = "";
-            this.FamilyExchangeTextBox.Visible = false;
+            this.FamilyParticipatingPeople.Location = new System.Drawing.Point(12, 210);
+            this.FamilyParticipatingPeople.Name = "FamilyParticipatingPeople";
+            this.FamilyParticipatingPeople.Size = new System.Drawing.Size(150, 100);
+            this.FamilyParticipatingPeople.TabIndex = 13;
+            this.FamilyParticipatingPeople.UseCompatibleStateImageBehavior = false;
+            this.FamilyParticipatingPeople.Visible = false;
+            this.FamilyParticipatingPeople.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ParticipatingPeople_ItemChecked);
+            // 
+            // IndividualParticipatingPeople
+            // 
+            this.IndividualParticipatingPeople.CheckBoxes = true;
+            this.IndividualParticipatingPeople.Location = new System.Drawing.Point(13, 62);
+            this.IndividualParticipatingPeople.Name = "IndividualParticipatingPeople";
+            this.IndividualParticipatingPeople.Size = new System.Drawing.Size(150, 100);
+            this.IndividualParticipatingPeople.TabIndex = 14;
+            this.IndividualParticipatingPeople.UseCompatibleStateImageBehavior = false;
+            this.IndividualParticipatingPeople.Visible = false;
+            this.IndividualParticipatingPeople.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.IndividualParticipatingPeople_ItemChecked);
+            // 
+            // IndividualExchangeButton
+            // 
+            this.IndividualExchangeButton.Location = new System.Drawing.Point(12, 168);
+            this.IndividualExchangeButton.Name = "IndividualExchangeButton";
+            this.IndividualExchangeButton.Size = new System.Drawing.Size(100, 23);
+            this.IndividualExchangeButton.TabIndex = 15;
+            this.IndividualExchangeButton.Text = "Exchange Gifts";
+            this.IndividualExchangeButton.UseVisualStyleBackColor = true;
+            this.IndividualExchangeButton.Visible = false;
+            this.IndividualExchangeButton.Click += new System.EventHandler(this.IndividualExchangeButton_Click);
+            // 
+            // FamilyExchanges
+            // 
+            this.FamilyExchanges.Location = new System.Drawing.Point(202, 195);
+            this.FamilyExchanges.Name = "FamilyExchanges";
+            this.FamilyExchanges.ReadOnly = true;
+            this.FamilyExchanges.Size = new System.Drawing.Size(150, 100);
+            this.FamilyExchanges.TabIndex = 16;
+            this.FamilyExchanges.Text = "";
+            this.FamilyExchanges.Visible = false;
+            // 
+            // FamilyLabel
+            // 
+            this.FamilyLabel.AutoSize = true;
+            this.FamilyLabel.Location = new System.Drawing.Point(12, 194);
+            this.FamilyLabel.Name = "FamilyLabel";
+            this.FamilyLabel.Size = new System.Drawing.Size(97, 13);
+            this.FamilyLabel.TabIndex = 17;
+            this.FamilyLabel.Text = "Family Participants:";
+            this.FamilyLabel.Visible = false;
+            // 
+            // IndividualLabel
+            // 
+            this.IndividualLabel.AutoSize = true;
+            this.IndividualLabel.Location = new System.Drawing.Point(13, 43);
+            this.IndividualLabel.Name = "IndividualLabel";
+            this.IndividualLabel.Size = new System.Drawing.Size(113, 13);
+            this.IndividualLabel.TabIndex = 18;
+            this.IndividualLabel.Text = "Individual Participants:";
+            this.IndividualLabel.Visible = false;
             // 
             // ExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 327);
-            this.Controls.Add(this.FamilyExchangeTextBox);
-            this.Controls.Add(this.Exchanges);
+            this.ClientSize = new System.Drawing.Size(396, 342);
+            this.Controls.Add(this.IndividualLabel);
+            this.Controls.Add(this.FamilyLabel);
+            this.Controls.Add(this.FamilyExchanges);
+            this.Controls.Add(this.IndividualExchangeButton);
+            this.Controls.Add(this.IndividualParticipatingPeople);
+            this.Controls.Add(this.FamilyParticipatingPeople);
+            this.Controls.Add(this.IndividualExchanges);
             this.Controls.Add(this.FamilyExchangeButton);
-            this.Controls.Add(this.FamilyEnterButton);
-            this.Controls.Add(this.FamilyEntryTextBox);
-            this.Controls.Add(this.FamilyEnterLabel);
-            this.Controls.Add(this.ExchangeLabel);
-            this.Controls.Add(this.EnterButton);
-            this.Controls.Add(this.EntryTextBox);
-            this.Controls.Add(this.EntryLabel);
             this.Controls.Add(this.ThompsonButton);
             this.Controls.Add(this.BowlesButton);
             this.Name = "ExchangeForm";
@@ -192,16 +170,14 @@
 
         private System.Windows.Forms.Button BowlesButton;
         private System.Windows.Forms.Button ThompsonButton;
-        private System.Windows.Forms.Label EntryLabel;
-        private System.Windows.Forms.TextBox EntryTextBox;
-        private System.Windows.Forms.Button EnterButton;
-        private System.Windows.Forms.Button ExchangeLabel;
-        private System.Windows.Forms.Label FamilyEnterLabel;
-        private System.Windows.Forms.TextBox FamilyEntryTextBox;
-        private System.Windows.Forms.Button FamilyEnterButton;
         private System.Windows.Forms.Button FamilyExchangeButton;
-        private System.Windows.Forms.RichTextBox Exchanges;
-        private System.Windows.Forms.RichTextBox FamilyExchangeTextBox;
+        private System.Windows.Forms.RichTextBox IndividualExchanges;
+        private System.Windows.Forms.ListView FamilyParticipatingPeople;
+        private System.Windows.Forms.ListView IndividualParticipatingPeople;
+        private System.Windows.Forms.Button IndividualExchangeButton;
+        private System.Windows.Forms.RichTextBox FamilyExchanges;
+        private System.Windows.Forms.Label FamilyLabel;
+        private System.Windows.Forms.Label IndividualLabel;
     }
 }
 

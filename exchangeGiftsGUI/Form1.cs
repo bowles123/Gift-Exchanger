@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace exchangeGiftsGUI
@@ -22,60 +16,43 @@ namespace exchangeGiftsGUI
         private void ExchangeForm_Load(object sender, EventArgs e)
         {
             exchange = new Exchange();
+            FamilyParticipatingPeople.CheckBoxes = true;
         }
 
         private void BowlesButton_Click(object sender, EventArgs e)
         {
-            EntryLabel.Visible = true;
-            EntryTextBox.Visible = true;
-            EnterButton.Visible = true;
-            Exchanges.Text = "";
-            FamilyExchangeTextBox.Text = "";
+            IndividualExchanges.Text = "";
+            exchange.Names.Clear();
+            IndividualParticipatingPeople.Items.Clear();
 
-            ExchangeLabel.Visible = false;
-            FamilyEnterLabel.Visible = false;
-            FamilyEntryTextBox.Visible = false;
-            FamilyEnterButton.Visible = false;
-            FamilyExchangeTextBox.Visible = false;
-            FamilyExchangeButton.Visible = false;
-            Exchanges.Visible = false;
+            IndividualParticipatingPeople.Items.Add("Derek");
+            IndividualParticipatingPeople.Items.Add("Aaron");
+            IndividualParticipatingPeople.Items.Add("Brian");
+            IndividualParticipatingPeople.Items.Add("Jason");
+            IndividualParticipatingPeople.Items.Add("Philip");
+            IndividualParticipatingPeople.Items.Add("Corey");
+            IndividualParticipatingPeople.Items.Add("Sam");
+            IndividualParticipatingPeople.Items.Add("Sarah");
+            IndividualParticipatingPeople.Items.Add("Tim");
+            IndividualParticipatingPeople.Items.Add("Abe");
+            IndividualParticipatingPeople.Items.Add("Rosa");
+            IndividualParticipatingPeople.Items.Add("Hannah");
+
+            IndividualLabel.Visible = true;
+            IndividualParticipatingPeople.Visible = true;
+            IndividualExchangeButton.Visible = true;
+            IndividualExchanges.Visible = false;
         }
 
         private void ThompsonButton_Click(object sender, EventArgs e)
         {
-            EntryLabel.Visible = true;
-            EntryTextBox.Visible = true;
-            EnterButton.Visible = true;
-            FamilyEnterLabel.Visible = true;
-            FamilyEntryTextBox.Visible = true;
-            FamilyEnterButton.Visible = true;
-
-            FamilyExchangeTextBox.Visible = false;
+            IndividualExchanges.Visible = false;
             FamilyExchangeButton.Visible = false;
-            Exchanges.Visible = false;
-            ExchangeLabel.Visible = false;
-            Exchanges.Text = "";
-            FamilyExchangeTextBox.Text = "";
+            IndividualExchanges.Text = "";
+            FamilyParticipatingPeople.Items.Clear();
         }
 
-        private void EnterButton_Click(object sender, EventArgs e)
-        {
-            ExchangeLabel.Visible = true;
-
-            if (EntryTextBox.Text != "")
-            {
-                exchange.Names.Add(EntryTextBox.Text);
-            }
-
-            EntryTextBox.Text = "";
-        }
-
-        private void FamilyEnterButton_Click(object sender, EventArgs e)
-        {
-            FamilyExchangeButton.Visible = true;
-        }
-
-        private void ExchangeLabel_Click(object sender, EventArgs e)
+        private void IndividualExchangeButton_Click(object sender, EventArgs e)
         {
             List<string> toNames = new List<string>(exchange.Names);
             string from, to;
@@ -88,7 +65,7 @@ namespace exchangeGiftsGUI
 
                 if (exchange.ExchangeGift(from, to))
                 {
-                    Exchanges.Text += String.Format("{0} -> {1}\n", from, to);
+                    IndividualExchanges.Text += String.Format("{0} -> {1}\n", from, to);
                     exchange.Names.Remove(from);
                     toNames.Remove(to);
                 }
@@ -96,18 +73,43 @@ namespace exchangeGiftsGUI
                     exchange.ShuffleNames();
             }
 
-            Exchanges.Visible = true;
+            IndividualExchanges.Visible = true;
         }
 
         private void FamilyExchangeButton_Click(object sender, EventArgs e)
         {
-            FamilyExchangeTextBox.Visible = true;
+            List<string> toNames = new List<string>(exchange.Names);
+            string from, to;
+
+            exchange.ShuffleNames();
+            while (exchange.Names.Count > 0)
+            {
+                from = exchange.Names[0];
+                to = toNames[0];
+
+                if (exchange.ExchangeGift(from, to))
+                {
+                    FamilyExchanges.Text += String.Format("{0} -> {1}\n", from, to);
+                    exchange.Names.Remove(from);
+                    toNames.Remove(to);
+                }
+                else
+                    exchange.ShuffleNames();
+            }
+
+            FamilyExchanges.Visible = true;
         }
 
-        private void EntryTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void ParticipatingPeople_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                EnterButton_Click(this, new EventArgs());
+            if (e.Item.Checked)
+                exchange.Names.Add(e.Item.Text);
+        }
+
+        private void IndividualParticipatingPeople_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+                exchange.Names.Add(e.Item.Text);
         }
     }
 }
